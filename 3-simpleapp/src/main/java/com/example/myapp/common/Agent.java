@@ -1,4 +1,4 @@
-package com.example.demo.myapp;
+package com.example.myapp.common;
 
 public interface Agent {
 

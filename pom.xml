@@ -10,6 +10,6 @@
 
     <modules>
         <module>1-springboot-starter</module>
-        <module>2-devtools</module>
+        <module>3-simpleapp</module>
     </modules>
 </project>
