@@ -1,8 +1,12 @@
 package com.example.myapp.common;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
+// The Oracle will appear by default if you don't specify and agent hence
+// @Primary
 @Component
+@Primary
 public class OracleAgent implements Agent {
     @Override
     public String getRole() {
