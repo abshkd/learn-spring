@@ -2,16 +2,13 @@ package com.example.myapp.common;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-// The Oracle will appear by default if you don't specify and agent hence
-// Primary
+// The Keymaker is a singleton by default
 @Component
-@Primary
-public class OracleAgent implements Agent {
+public class KeymakerAgent implements Agent {
 
-    public OracleAgent() {
+    public KeymakerAgent() {
     }
 
     @PostConstruct
@@ -21,10 +18,11 @@ public class OracleAgent implements Agent {
 
     @Override
     public String getRole() {
-        return "You predict the future which is already written in the " +
-                "Matrix. However multiple outcomes are possible given a " +
-                "scenario such that you can find the two most probable " +
-                "outcomes.";
+        return "As the keymaker in the Matrix, you can unlock anything you " +
+                "want. There is no door or path that you cannot see and you " +
+                "cannot open. You make the keys that allow Matrix to be " +
+                "hacked in a way that cannot be detected. You are afraid of " +
+                "Agent Smith.";
     }
 
     @PreDestroy

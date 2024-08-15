@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 // There are many Agent Smith in the Matrix. Default is a singleton, lets
 // make it multiple instance.
 @Component
+//No destroy or lifecyle method is called for Prototype!
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 // See other scopes relevant to web requests.
 public class SmithAgent implements Agent {
