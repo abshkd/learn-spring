@@ -17,7 +17,7 @@ public class AgentController {
     private Agent myAgent;
     private Agent otherAgent;
     private Agent oracleAgent;
-    private Agent oracleAgentSecond;
+    private Agent architectAgent;
 
 
     // DI using Setter. left old comment about constructor.
@@ -26,12 +26,15 @@ public class AgentController {
     @Autowired
     public void setAgent(@Qualifier("smithAgent") Agent theAgent,
                          @Qualifier("smithAgent") Agent theOtherAgent,
-                         @Qualifier("oracleAgent") Agent oracleAgent,
-                         @Qualifier("oracleAgent") Agent oracleAgentSecond) {
+                         @Qualifier("oracleAgent") Agent theOracleAgent,
+                         @Qualifier("architect") Agent theArchitectAgent
+    ) {
         myAgent = theAgent;
         otherAgent = theOtherAgent;
-        oracleAgent = otherAgent;
-        oracleAgentSecond = oracleAgentSecond;
+        oracleAgent = theOracleAgent;
+        architectAgent = theArchitectAgent;
+
+
     }
 
     @GetMapping("/role")
@@ -41,8 +44,11 @@ public class AgentController {
 
     @GetMapping("/who")
     public String getWho() {
-        return "Agent Smith is the same one you met? " + (myAgent == otherAgent) +
-                "\t Is there only one Oracle? " + (oracleAgent == oracleAgentSecond);
+        return "Characters are " + myAgent.getClass().getName() + ", " +
+                otherAgent.getClass().getName() + ", " +
+                oracleAgent.getClass().getName() + ", " +
+                architectAgent.getClass().getName()
+                ;
     }
 
     @GetMapping("/")
